@@ -1,0 +1,54 @@
+digraph TMDB_ML_Pipeline {
+	bgcolor=white fontname=Arial fontsize=20 label="TMDB Movie Revenue Prediction - Machine Learning Pipeline" labelloc=t nodesep=0.45 rankdir=TB ranksep=0.55 splines=ortho
+	node [color="#174A6E" fillcolor="#EAF3F8" fontname=Arial fontsize=10 margin=0.18 penwidth=1.5 shape=box style="rounded,filled"]
+	edge [arrowsize=0.8 color="#174A6E" penwidth=1.4]
+	A [label="TMDB Movie Dataset"]
+	B [label="Data Cleaning and Preprocessing"]
+	C [label="Feature Engineering"]
+	D [label="Exploratory Data Analysis (EDA)"]
+	E [label="Train-Test Split (80:20)"]
+	F [label="Feature Selection
+budget_log
+release_year
+cast_count
+keyword_count
+financial_score_log"]
+	G [label="Regression Model Training
+Dummy Regressor
+Linear Regression
+Ridge Regression
+Decision Tree
+Random Forest
+Extra Trees
+XGBoost"]
+	H [label="5-Fold Cross-Validation
+Model Comparison (RMSE)"]
+	I [label="Hyperparameter Tuning
+RandomizedSearchCV"]
+	J [label="Final Model Evaluation
+MAE | MSE | RMSE | R²"]
+	K [label="Selected Final Model
+XGBoost" fontname=Arial fontsize=10 image="final.png" imagescale=true labelloc=b shape=none]
+	L [label="Model Diagnostics
+Actual vs Predicted
+Residual Analysis
+Feature Importance"]
+	M [label="Save Model using Joblib"]
+	N [label="Example Movie Revenue Prediction"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+	G -> H
+	H -> I
+	I -> J
+	J -> K
+	K -> L
+	L -> M
+	M -> N
+	T [label="Held-Out Test Data (20%)" color="#2878B5" fillcolor="#DCEEFF"]
+	E -> T
+	T -> J
+}

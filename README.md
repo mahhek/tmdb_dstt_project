@@ -108,7 +108,7 @@ Important files include:
 
 | File | Description |
 |---|---|
-| `TMDB_Movie_Project_phase_2.ipynb` |  project notebook  
+| `TMDB_Movie_Project_phase_2 (Final).ipynb` |  project notebook  
 | `tmdb_movies_preprocessed.csv` | Final preprocessed movie dataset |
 | `final_movie_revenue_pipeline.pkl` | Saved regression pipeline |
 | `movie_success_classification_pipeline.pkl` | Saved classification pipeline |
